@@ -1,18 +1,17 @@
-# Thefolahan Apipilot
+# API Pilot for Homebrew
 
-## How do I install these formulae?
+Homebrew formula for `apipilot`, the command line tool from [API Pilot](https://github.com/thefolahan/api-pilot). It validates an OpenAPI spec, runs the saved requests in a workspace, serves a mock server and exports HTML docs.
 
-`brew install thefolahan/apipilot/<formula>`
-
-Or `brew tap thefolahan/apipilot` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "thefolahan/apipilot"
-brew "<formula>"
+```sh
+brew install thefolahan/apipilot/apipilot
 ```
 
-## Documentation
+It builds from source, so it needs macOS 14 or later and the Xcode command line tools.
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+## Releasing a new version
+
+Tag the release in `thefolahan/api-pilot`. The autobump workflow checks daily and opens a pull request here with the new URL and checksum. To do it by hand:
+
+```sh
+brew bump-formula-pr --url https://github.com/thefolahan/api-pilot/archive/refs/tags/vX.Y.Z.tar.gz thefolahan/apipilot/apipilot
+```
